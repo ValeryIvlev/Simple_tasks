@@ -59,3 +59,34 @@ if 1 <= n <= 10:
     print(l[i])
 else:
     print("ошибка")
+
+
+# Есть 2 робота.
+# Изначально неясно какое между роботами расстояние и кто слева, а кто справа.
+# Надо написать программу для роботов, которая будет гарантировать их встречу.
+# Программа одинаковая для обоих роботов, коммуникации между роботами нет.
+
+def look():
+    if point_first_x == point_second_y or point_second_x == point_first_y:
+        return True
+
+x, y = int(input()), int(input())
+step = 0
+point_first_y = y
+point_second_y = y
+point_first_x = x
+point_second_x = x
+
+
+while look() == True:
+    step += 1
+
+    point_first_x = x + step
+    look()
+    point_second_x = x - step
+    look()
+    point_first_y = y + step
+    look()
+    point_second_y = y - step
+    look()
+print("Нашлись")
