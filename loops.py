@@ -78,15 +78,15 @@ point_first_x = x
 point_second_x = x
 
 
-while look() == True:
+while look() != True:
     step += 1
 
     point_first_x = x + step
-    look()
+    if look() == True: break
     point_second_x = x - step
-    look()
+    if look() == True: break
     point_first_y = y + step
-    look()
+    if look() == True: break
     point_second_y = y - step
-    look()
+    if look() == True: break
 print("Нашлись")
