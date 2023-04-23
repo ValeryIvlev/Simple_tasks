@@ -103,3 +103,25 @@ while -1 <= n <= 5:
         m += 1
     n = int(input())
 print(m)
+
+# Введите с клавиатуры список с различными значениями
+# (цифры, слова, символы). Необходимо проверить,
+# есть ли в этом списке два слова подряд и вывести их на экран.
+# Если таких пар нет, то выведите фразу “Мало слов!”.
+
+
+x = input().split()
+count = 0
+count_print = False
+for i in range(len(x)):
+    if x[i].upper() != x[i].lower():
+        count += 1
+    else:
+        count = 0
+    if count == 2:
+        a = i - 1
+        print(x[a], x[i])
+        count = 0
+        count_print = True
+if count_print == False:
+    print("Мало слов!")
