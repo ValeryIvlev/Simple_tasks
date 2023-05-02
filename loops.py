@@ -125,3 +125,13 @@ for i in range(len(x)):
         count_print = True
 if count_print == False:
     print("Мало слов!")
+
+# На вход программе подается строка текста.
+# Напишите программу, которая подсчитывает количество цифр в данной строке.
+
+n = input()
+count = 0
+for i in n:
+    if '0' <= i <= '9':
+        count += 1
+print(count)
