@@ -30,3 +30,18 @@ class Solution:
                 total_par += s
         return [total_par, count]
 
+# 2148. Count Elements With Strictly Smaller and Greater Elements
+# Given an integer array nums, return the number of elements that have both a strictly
+# smaller and a strictly greater element appear in nums.
+
+class Solution:
+    def countElements(self, nums: List[int]) -> int:
+        nums2 = nums.copy()
+        for i in nums:
+            if i == min(nums):
+                while i in nums2:
+                    nums2.remove(i)
+            if i == max(nums):
+                while i in nums2:
+                    nums2.remove(i)
+        return len(nums2)
