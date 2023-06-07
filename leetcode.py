@@ -45,3 +45,14 @@ class Solution:
                 while i in nums2:
                     nums2.remove(i)
         return len(nums2)
+
+# 9. Palindrome Number
+# Given an integer x, return true if x is a
+# palindrome and false otherwise.
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if str(x) == str(x)[::-1] and x >= 0:
+            return True
+        else:
+            return False
