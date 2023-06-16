@@ -1,4 +1,5 @@
 # 2341
+
 # You are given a 0-indexed integer array nums. In one operation, you may do the following:
 #
 # Choose two integers in nums that are equal.
@@ -31,6 +32,7 @@ class Solution:
         return [total_par, count]
 
 # 2148. Count Elements With Strictly Smaller and Greater Elements
+
 # Given an integer array nums, return the number of elements that have both a strictly
 # smaller and a strictly greater element appear in nums.
 
@@ -47,6 +49,7 @@ class Solution:
         return len(nums2)
 
 # 9. Palindrome Number
+
 # Given an integer x, return true if x is a
 # palindrome and false otherwise.
 
@@ -74,3 +77,15 @@ class Solution:
         a = str(int(a) + 1)
         s = list(map(int, [i for i in a]))
         return s
+
+# 217. Contains Duplicate
+
+# Given an integer array nums, return true if any value appears at least twice in the array,
+# and return false if every element is distinct.
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if len(set(nums)) != len(nums):
+            return True
+        else:
+            return False
