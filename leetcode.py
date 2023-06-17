@@ -89,3 +89,25 @@ class Solution:
             return True
         else:
             return False
+
+# 1790. Check if One String Swap Can Make Strings Equal
+
+# You are given two strings s1 and s2 of equal length.
+# A string swap is an operation where you choose two indices in a string
+# (not necessarily different) and swap the characters at these indices.
+#
+# Return true if it is possible to make both strings equal by performing
+# at most one string swap on exactly one of the strings. Otherwise, return false.
+
+class Solution:
+    def areAlmostEqual(self, s1: str, s2: str) -> bool:
+        count = 0
+        a = {i: s1.count(i) for i in s1}
+        b = {i: s2.count(i) for i in s2}
+        for i in range(len(s1)):
+            if s1[i] != s2[i] and s1.count(s1[i]) == s2.count(s2[i]):
+                count += 1
+        if (count == 2 or count == 0) and a == b:
+            return True
+        else:
+            return False
