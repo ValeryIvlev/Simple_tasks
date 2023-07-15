@@ -239,3 +239,21 @@ class Solution:
         words = [(words.count(i), i) for i in words]
         a = sorted(list(set(words)), key=lambda x: (-x[0], x[1]),)[:k]
         return [i[1] for i in a]
+
+# 438. Find All Anagrams in a String
+
+# Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
+#
+# An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+# typically using all the original letters exactly once.
+
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        s, p = list(s), list(p)
+        p.sort()
+        x = []
+        for i in range(len(s) - len(p) + 1):
+            word = sorted(s[i:i+len(p)])
+            if word == p:
+                x.append(i)
+        return x
