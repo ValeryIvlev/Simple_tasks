@@ -257,3 +257,18 @@ class Solution:
             if word == p:
                 x.append(i)
         return x
+
+# 1207. Unique Number of Occurrences
+
+# Given an array of integers arr,
+# return true if the number of occurrences of each value in the array is unique or false otherwise.
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        d = []
+        s = []
+        for i in arr:
+            if i not in d:
+                d.append(i)
+                s.append(arr.count(i))
+        return len(s) == len(set(s))
