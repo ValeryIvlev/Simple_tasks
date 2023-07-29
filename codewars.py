@@ -51,3 +51,21 @@ def high(x):
                 word = i
 
     return word
+
+
+# 6 kyu
+# Unique In Order
+
+# Implement the function unique_in_order which takes as argument
+# a sequence and returns a list of items without any elements
+# with the same value next to each other
+# and preserving the original order of elements.
+
+def unique_in_order(sequence):
+    last_i = ''
+    a = []
+    for i in sequence:
+        if i != last_i:
+            a.append(i)
+        last_i = i
+    return a
