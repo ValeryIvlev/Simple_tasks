@@ -272,3 +272,24 @@ class Solution:
                 d.append(i)
                 s.append(arr.count(i))
         return len(s) == len(set(s))
+
+
+# 1502. Can Make Arithmetic Progression From Sequence
+
+# A sequence of numbers is called an arithmetic progression
+# if the difference between any two consecutive elements is the same.
+#
+# Given an array of numbers arr,
+# return true if the array can be rearranged to form an arithmetic progression.
+# Otherwise, return false.
+
+class Solution:
+    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+        arr.sort()
+        k = arr[0] - arr[1]
+        for i in range(len(arr)-1):
+            if arr[i] - arr[i+1] == k:
+                continue
+            else:
+                return False
+        return True
