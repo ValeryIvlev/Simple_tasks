@@ -51,3 +51,28 @@ public class Scramblies {
 
     }
 }
+
+
+961. N-Repeated Element in Size 2N Array
+
+You are given an integer array nums with the following properties:
+
+nums.length == 2 * n.
+nums contains n + 1 unique elements.
+Exactly one element of nums is repeated n times.
+Return the element that is repeated n times.
+
+
+class Solution {
+    public int repeatedNTimes(int[] nums) {
+        HashMap<Integer, Integer> dict = new HashMap<>();
+        for (int i: nums){
+            Integer value = dict.getOrDefault(i, 0) + 1;
+            dict.put(i, value);
+            if (value.equals(2)){
+                return i;
+            }
+        }
+        return 0;
+    }
+}
