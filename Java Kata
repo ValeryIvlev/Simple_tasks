@@ -76,3 +76,22 @@ class Solution {
         return 0;
     }
 }
+
+557. Reverse Words in a String III
+Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+class Solution {
+    public String reverseWords(String s) {
+        String [] a = s.split(" ");
+        ArrayList<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        for (String i: a){
+            sb.append(i);
+            sb.reverse();
+            list.add(String.valueOf(sb));
+            sb.delete(0, i.length());
+        }
+
+        return String.join(" ", list);
+    }
+}
